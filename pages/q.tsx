@@ -11,17 +11,17 @@ import { ProductService } from '@/services/product/product.service';
 const SearchPage: NextPage = () => {
   const { query } = useRouter();
 
-  const { data } = useQuery(['search products', query.term], () => {
+  const { data } = useQuery(['search products', query.term], () => 
     ProductService.getAll({
       searchTerm: query.term as string,
-    });
-  });
+    })
+  );
 
   return(
     <Meta title="Поиск">
         <Layout>
             <Catalog
-                products={data || []}
+                products={data?.products || []}
                 title={`Поиск по запросу "${query.term || ""}"`}
             />
         </Layout>
