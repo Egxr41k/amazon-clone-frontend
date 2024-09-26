@@ -1,37 +1,50 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { FLUSH, PAUSE, PERSIST, persistReducer, persistStore, PURGE, REGISTER, REHYDRATE } from "redux-persist";
-import storage from "redux-persist/lib/storage";
-import { cartSlice } from "./cart/cart.slice";
-import { userSlice } from "./user/user.slice";
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import {
+  FLUSH,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+  REHYDRATE,
+  persistStore,
+} from 'redux-persist';
 
-// import { carousel } from "@/../src/store/carousel/carousel.slice";
+import { cartSlice } from './cart/cart.slice';
+import { userSlice } from './user/user.slice';
 
-// import { cartSlice } from "./cart/cart.slice";
+const isClient = typeof window !== undefined;
 
-const persistConfig = {
-    key: "amazon-clone",
-    storage,
-    whitelist: ["cart"]
-}
-
-const rootReducer = combineReducers({
-    user: userSlice.reducer,
-    cart: cartSlice.reducer,
-    // carousel: carouselSlice.reducer
+const combinedReducers = combineReducers({
+  user: userSlice.reducer,
+  cart: cartSlice.reducer,
+  // carousel: carouselSlice.reducer
 });
 
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+let mainReduser = combinedReducers;
+
+if (isClient) {
+  const { persistReducer } = require('redux-persist');
+  const storage = require('redux-persist/lib/storage').default;
+
+  const persistConfig = {
+    key: 'amazon-clone',
+    storage,
+    whitelist: ['cart'],
+  };
+
+  mainReduser = persistReducer(persistConfig, combinedReducers);
+}
 
 export const store = configureStore({
-    reducer: persistedReducer,
-    middleware: getDefaultMiddleware => 
-        getDefaultMiddleware({
-            serializableCheck: {
-                ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER]
-            }
-        })
+  reducer: mainReduser,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
 });
 
 export const persistor = persistStore(store);
 
-export type TypeRootStore = ReturnType<typeof rootReducer>;
+export type TypeRootStore = ReturnType<typeof mainReduser>;

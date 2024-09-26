@@ -24,6 +24,7 @@ export const userSlice = createSlice({
       }),
       builder.addCase(register.rejected, (state) => {
         state.isLoading = false;
+        state.user = null;
       }),
       builder.addCase(login.pending, (state) => {
         state.isLoading = true;
