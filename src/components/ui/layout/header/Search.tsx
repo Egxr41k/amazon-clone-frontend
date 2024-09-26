@@ -1,27 +1,30 @@
-import { useRouter } from 'next/router';
-import { FC, useState } from "react";
-import { BsSearch } from "react-icons/bs";
-
+import { useRouter } from 'next/navigation';
+import { FC, useState } from 'react';
+import { BsSearch } from 'react-icons/bs';
 
 const Search: FC = () => {
+  const [searchTerm, setSearchTerm] = useState<string>();
+
   const router = useRouter();
 
-  const [term, setTerm] = useState<string>()
-
-  return <div>
-    <div className='flex'>
-      <div className='bg-black rounded-l-lg py-1 px-3'>
-      <input className='bg-transparent text-white outline-none w-72'
-        value={term} 
-        onChange={(e)=> setTerm(e.target.value)}
-        placeholder='Search...'/>
+  return (
+    <div>
+      <div className="border border-solid border-gray/10 grid w-1/2 rounded-xl overflow-hidden">
+        <input
+          className="bg-[#22303E] py-2 px-4 text-white outline-none"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          placeholder="Search..."
+        />
+        <button
+          className="bg-primary text-white flex items-center justify-center p-2.5"
+          onClick={() => router.push(`/q?term=${searchTerm}`)}
+        >
+          <BsSearch />
+        </button>
       </div>
-      <button className="h-10 w-10 bg-primary flex items-center justify-center hover:bg-primary/90 transition-colors duration-200 relative rounded-r-lg"
-        onClick={() => router.push(`q?term=${term}`)}>
-        <BsSearch  color='white' />
-      </button>
     </div>
-  </div>
-}
+  );
+};
 
 export default Search;

@@ -1,17 +1,18 @@
-import { ICartItem } from "./cart.interface";
-import { IUser } from "./user.interface";
+import { ICartItem } from './cart.interface';
+import { IUser } from './user.interface';
 
 export enum EnumOrderStatus {
-    PENDING = "PENDING",
-    PAYED = "PAYED",
-    SHIPPED = "SHIPPED",
-    DELIVERED = "DELIVERED"
-};
+  PENDING = 'PENDING',
+  PAYED = 'PAYED',
+  SHIPPED = 'SHIPPED',
+  DELIVERED = 'DELIVERED',
+}
 
 export interface IOrder {
-    id: number,
-    craetedAt: string,
-    items: ICartItem[],
-    status: EnumOrderStatus,
-    user: IUser
+  id: number;
+  craetedAt: string;
+  items: ICartItem[];
+  status: EnumOrderStatus;
+  total: number;
+  user: IUser;
 }
