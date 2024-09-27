@@ -13,7 +13,7 @@ export type TypeProductDataFilters = {
   searchTerm?: string;
   page?: string | number;
   perPage?: string | number;
-  raitinngs: string;
+  raitings: string;
   minPrice?: string;
   maxPrice?: string;
   categoryId?: string;

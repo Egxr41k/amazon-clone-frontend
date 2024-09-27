@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 
 import Catalog from '@/ui/catalog/Catalog';
-import Layout from '@/ui/layout/Layout';
 
 import { IPageSlugParam, TypeParamSlug } from '@/types/page-params';
 
@@ -55,8 +54,8 @@ export default async function CategoryPage({ params }: IPageSlugParam) {
   const data = await getProduts(params);
 
   return (
-    <Layout>
+    <>
       <Catalog products={data.products || []} title={data.category.name} />
-    </Layout>
+    </>
   );
 }

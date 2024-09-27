@@ -1,13 +1,10 @@
+'use client';
+
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { FC } from 'react';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 
-import { useActions } from '@/hooks/useActions';
-import { useAuth } from '@/hooks/useAuth';
-import { useCart } from '@/hooks/useCart';
 import { useProfile } from '@/hooks/useProfile';
-
-import { IProduct } from '@/types/product.interface';
 
 import { UserService } from '@/services/user.service';
 

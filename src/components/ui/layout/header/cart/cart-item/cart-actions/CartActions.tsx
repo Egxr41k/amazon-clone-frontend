@@ -1,3 +1,5 @@
+'use client';
+
 import { FC } from 'react';
 import { AiFillMinusSquare, AiFillPlusSquare } from 'react-icons/ai';
 import { FiTrash } from 'react-icons/fi';

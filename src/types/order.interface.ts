@@ -16,3 +16,9 @@ export interface IOrder {
   total: number;
   user: IUser;
 }
+
+export interface IOrderItem {
+  price: number;
+  quantity: number;
+  productId: number;
+}

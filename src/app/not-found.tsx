@@ -1,9 +1,8 @@
 import Heading from '@/ui/Heading';
-import Layout from '@/ui/layout/Layout';
 
 export default function NotFound() {
   return (
-    <Layout>
+    <>
       <Heading>NotFound</Heading>
       <p>Could not find requested rsource</p>
       <p>
@@ -12,6 +11,6 @@ export default function NotFound() {
           all products
         </link>
       </p>
-    </Layout>
+    </>
   );
 }

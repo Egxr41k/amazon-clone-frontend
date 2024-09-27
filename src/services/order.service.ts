@@ -1,6 +1,6 @@
-import { instance } from '@/api/api.intercepter';
+import { IOrder, IOrderItem } from '@/types/order.interface';
 
-import { IOrder } from '@/types/order.interface';
+import { instance } from '@/api/api.intercepter';
 
 const ORDERS = '/reviews';
 
@@ -10,5 +10,13 @@ export const OrderService = {
       url: ORDERS,
       method: 'GET',
     });
-  }
+  },
+
+  async place(data: { items: IOrderItem[] }) {
+    return instance({
+      url: ORDERS,
+      method: 'POST',
+      data,
+    });
+  },
 };

@@ -14,7 +14,7 @@ async function getProduts() {
   const data = await ProductService.getAll({
     page: 1,
     perPage: 4,
-    raitinngs: '',
+    raitings: '',
   });
 
   return data;
@@ -22,6 +22,7 @@ async function getProduts() {
 
 export default async function HomePage() {
   const data = await getProduts();
+  console.log(data);
 
   return <Home products={data.products} length={data.length} />;
 }

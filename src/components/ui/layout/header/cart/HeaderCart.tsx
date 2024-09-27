@@ -1,23 +1,49 @@
+'use client';
+
+import { useMutation } from '@tanstack/react-query';
 import cn from 'classNames';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { FC } from 'react';
 import { RiShoppingCartLine } from 'react-icons/ri';
 
 import Button from '@/ui/button/Button';
 import SquareButton from '@/ui/button/SquareButton';
 
+import { useActions } from '@/hooks/useActions';
 import { useCart } from '@/hooks/useCart';
 import { useOutside } from '@/hooks/useOutside';
 
 import { convertPrice } from '@/utils/convertPrice';
+
 import CartItem from './cart-item/CartItem';
+import { OrderService } from '@/services/order.service';
 
 const HeaderCart: FC = () => {
   const { isShow, setIsShow, ref } = useOutside(false);
 
   const { items, total } = useCart();
 
+  const { reset } = useActions();
+
   const { push } = useRouter();
+
+  const { mutate } = useMutation(
+    ['create order and payment'],
+    () =>
+      OrderService.place({
+        items: items.map((item) => ({
+          price: item.price,
+          quantity: item.quantity,
+          productId: item.product.id,
+        })),
+      }),
+    {
+      onSuccess() {
+        reset();
+        //push(data.confirmation.confirmation_url);
+      },
+    },
+  );
 
   return (
     <div className="relative" ref={ref}>
@@ -45,8 +71,8 @@ const HeaderCart: FC = () => {
           )}
         </div>
 
-          <div>
-        {/* <div className={styles.footer}> */}
+        <div>
+          {/* <div className={styles.footer}> */}
           <div>Total:</div>
           <div>{convertPrice(total)}</div>
         </div>

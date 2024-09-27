@@ -3,7 +3,6 @@
 import { useQuery } from '@tanstack/react-query';
 
 import Heading from '@/ui/Heading';
-import Layout from '@/ui/layout/Layout';
 
 import { convertPrice } from '@/utils/convertPrice';
 
@@ -17,7 +16,7 @@ export default function MyOrders() {
   );
 
   return (
-    <Layout>
+    <>
       <Heading>My order</Heading>
 
       <section>
@@ -39,6 +38,6 @@ export default function MyOrders() {
           <div>Order not found</div>
         )}
       </section>
-    </Layout>
+    </>
   );
 }

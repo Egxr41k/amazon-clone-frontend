@@ -1,3 +1,5 @@
+'use client';
+
 import { useQuery } from '@tanstack/react-query';
 import { FC, useState } from 'react';
 import { TailSpin } from 'react-loader-spinner';
@@ -30,6 +32,7 @@ const CatalogPagination: FC<ICatalogPagination> = ({ data, title }) => {
         page,
         perPage: 4,
         sort: sortType,
+        raitinngs: '',
       }),
     {
       initialData: data,
