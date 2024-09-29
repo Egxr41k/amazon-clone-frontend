@@ -1,17 +1,11 @@
-'use client';
-
 import { FC } from 'react';
 
-import Heading from '@/ui/Heading';
+import Catalog from '@/ui/catalog/Catalog';
 
 import { TypePaginationProducts } from '@/types/product.interface';
 
-const Home: FC<TypePaginationProducts> = ({ products, length }) => {
-  return <Heading>{products[0].name}</Heading>;
-
-  // return (
-  //   <CatalogPagination title="Freshed products" data={{ products, length }} />
-  // );
+const Home: FC<TypePaginationProducts> = ({ products }) => {
+  return <Catalog title="Freshed products" products={products} />;
 };
 
 export default Home;

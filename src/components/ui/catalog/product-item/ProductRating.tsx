@@ -1,11 +1,14 @@
-'use client';
-
 import { FC, useState } from 'react';
 import { Rating } from 'react-simple-star-rating';
 
 import { IProduct } from '@/types/product.interface';
 
-const ProductRating: FC<{ product: IProduct }> = ({ product }) => {
+interface IProductRaiteing {
+  product: IProduct;
+  isText?: boolean;
+}
+
+const ProductRating: FC<IProductRaiteing> = ({ product, isText = false }) => {
   const [rating, setRating] = useState(
     Math.round(
       product.reviews.reduce((acc, review) => acc + review.rating, 0) /
@@ -32,7 +35,9 @@ const ProductRating: FC<{ product: IProduct }> = ({ product }) => {
           </span>
         </span>
       )}
-      <span className="text-xs">({product.reviews.length} reviews)</span>
+      {isText && (
+        <span className="text-xs">({product.reviews.length} reviews)</span>
+      )}
     </div>
   );
 };

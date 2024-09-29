@@ -6,7 +6,6 @@ import { TailSpin } from 'react-loader-spinner';
 import { IProduct } from '@/types/product.interface';
 
 import Heading from '../Heading';
-import Button from '../button/Button';
 
 import ProductItem from './product-item/ProductItem';
 
@@ -14,15 +13,9 @@ interface ICatalog {
   products: IProduct[];
   isLoading?: boolean;
   title?: string;
-  isPagination?: boolean;
 }
 
-const Catalog: FC<ICatalog> = ({
-  products,
-  isLoading,
-  title,
-  isPagination = false,
-}) => {
+const Catalog: FC<ICatalog> = ({ products, isLoading, title }) => {
   if (isLoading)
     return (
       <TailSpin
@@ -40,7 +33,6 @@ const Catalog: FC<ICatalog> = ({
   return (
     <section>
       {title && <Heading className="mb-5">{title}</Heading>}
-      {/* {isPagination && <SortDropdown />} */}
       {products.length ? (
         <>
           <div className="grid grid-cols-4 gap-10">
@@ -48,7 +40,6 @@ const Catalog: FC<ICatalog> = ({
               <ProductItem key={product.id} product={product} />
             ))}
           </div>
-          {isPagination && <Button variant="orange">Load more...</Button>}
         </>
       ) : (
         <div>There are no products</div>

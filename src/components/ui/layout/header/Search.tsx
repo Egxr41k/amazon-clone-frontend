@@ -1,5 +1,3 @@
-'use client';
-
 import { useRouter } from 'next/navigation';
 import { FC, useState } from 'react';
 import { BsSearch } from 'react-icons/bs';
@@ -12,7 +10,7 @@ const Search: FC = () => {
   return (
     <div>
       <div
-        className="border border-solid border-gray/10 grid w-1/2 rounded-xl overflow-hidden"
+        className="border border-solid border-gray/10 grid w-1/3 rounded-xl overflow-hidden"
         style={{
           gridTemplateColumns: '1fr 0.1fr',
         }}
@@ -25,7 +23,7 @@ const Search: FC = () => {
         />
         <button
           className="bg-primary text-white flex items-center justify-center p-2.5"
-          onClick={() => router.push(`/q?term=${searchTerm}`)}
+          onClick={() => router.push(`/explorer?searchTerm=${searchTerm}`)}
         >
           <BsSearch />
         </button>

@@ -25,6 +25,11 @@ module.exports = {
   theme: {
     colors,
     extend: {
+      zIndex: {
+        1: 1,
+        2: 2,
+        3: 3,
+      },
       fontSize: {
         xs: '0.82rem',
         sm: '0.98rem',
