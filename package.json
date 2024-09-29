@@ -12,6 +12,7 @@
     "@tanstack/react-query": "^4.29.5",
     "@trivago/prettier-plugin-sort-imports": "^4.1.1",
     "@types/js-cookie": "^3.0.3",
+    "@types/react-transition-group": "^4.4.11",
     "axios": "^1.7.7",
     "classnames": "^2.3.2",
     "clsx": "^1.2.1",
@@ -27,6 +28,7 @@
     "react-redux": "^8.0.5",
     "react-simple-star-rating": "^5.1.7",
     "react-svg-spinner": "^1.0.4",
+    "react-transition-group": "^4.4.5",
     "redux": "^4.2.1",
     "redux-persist": "^6.0.0",
     "sass": "^1.62.1"

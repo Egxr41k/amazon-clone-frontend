@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { Golos_Text } from 'next/font/google';
 import { PropsWithChildren } from 'react';
 
 import Header from '@/ui/layout/header/Header';
@@ -28,9 +29,17 @@ export const metadata: Metadata = {
   },
 };
 
+const golos = Golos_Text({
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin', 'cyrillic-ext'],
+  display: 'swap',
+  style: ['normal'],
+  variable: '--font-golos',
+});
+
 export default function RootLayout({ children }: PropsWithChildren<unknown>) {
   return (
-    <html lang="en">
+    <html lang="en" className={golos.variable}>
       <body>
         <Providers>
           <div className="bg-secondary">
