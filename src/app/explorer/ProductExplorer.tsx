@@ -12,6 +12,7 @@ import { TypePaginationProducts } from '@/types/product.interface';
 
 import styles from './ProductExplorer.module.scss';
 import Pagination from './pagination/Pagination';
+import SortDropdown from './sort/SortDropdown';
 import { useFilters } from './useFilters';
 import { ProductService } from '@/services/product/product.service';
 
@@ -41,7 +42,7 @@ const ProductExplorer: FC<IProductExplorer> = ({ initialProducts }) => {
             ? `Search by query "${queryParams.searchTerm}"`
             : 'Explorer'}
         </Heading>
-        {/* <SortDropdown/> */}
+        <SortDropdown />
       </div>
       <Button
         variant="white"
