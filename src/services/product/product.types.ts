@@ -13,7 +13,7 @@ export type TypeProductDataFilters = {
   searchTerm?: string;
   page?: string | number;
   perPage?: string | number;
-  raitings: string;
+  raitings?: string;
   minPrice?: string;
   maxPrice?: string;
   categoryId?: string;
@@ -25,3 +25,7 @@ export enum EnumProductSort {
   NEWEST = 'newest',
   OLDEST = 'oldest',
 }
+
+export type TypeParamsFilters = {
+  searchParams: TypeProductDataFilters;
+};

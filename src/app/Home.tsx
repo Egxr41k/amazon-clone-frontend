@@ -11,7 +11,7 @@ const Home: FC<TypePaginationProducts> = ({ products }) => {
   return (
     <>
       <Carousel items={carouselItems} className="mb-10" />
-      <Catalog title="Freshed products" products={products} />;
+      <Catalog title="Freshed products" products={products} />
     </>
   );
 };

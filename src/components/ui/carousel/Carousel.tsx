@@ -25,7 +25,7 @@ const Carousel: FC<ICarousel> = ({ items, className = '' }) => {
   return (
     <section className={cn(className, 'relative')}>
       <CarouselNavigation />
-      <TransitionGroup className="relative">
+      <TransitionGroup className="relative h-56">
         <CSSTransition
           key={selectedItem.title}
           timeout={500}

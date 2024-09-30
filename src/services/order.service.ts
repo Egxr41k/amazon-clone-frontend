@@ -12,6 +12,21 @@ export const OrderService = {
     });
   },
 
+  async getById() {
+    return instance<IOrder[]>({
+      url: `${ORDERS}/by-user`,
+      method: 'GET',
+    });
+  },
+
+  // async place(data: TypeData) {
+  //   return instance<{ confirmation: { confirmatio_url: string } }>({
+  //     url: ORDERS,
+  //     method: 'POST',
+  //     data,
+  //   });
+  // },
+
   async place(data: { items: IOrderItem[] }) {
     return instance({
       url: ORDERS,

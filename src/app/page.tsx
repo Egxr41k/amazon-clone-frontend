@@ -22,7 +22,5 @@ async function getProduts() {
 
 export default async function HomePage() {
   const data = await getProduts();
-  console.log(data);
-
   return <Home products={data.products} length={data.length} />;
 }

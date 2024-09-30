@@ -1,5 +1,6 @@
 'use client';
 
+import logo from 'assets/amazon-logo.png';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
@@ -33,7 +34,7 @@ const Header: FC = () => {
               priority
               width={180}
               height={37}
-              src="/images/logo.svg"
+              src={logo}
               alt="Amazon Icon"
             />
           </>
