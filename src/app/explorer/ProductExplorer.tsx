@@ -11,6 +11,7 @@ import Catalog from '@/ui/catalog/Catalog';
 import { TypePaginationProducts } from '@/types/product.interface';
 
 import styles from './ProductExplorer.module.scss';
+import Pagination from './pagination/Pagination';
 import { useFilters } from './useFilters';
 import { ProductService } from '@/services/product/product.service';
 
@@ -59,7 +60,11 @@ const ProductExplorer: FC<IProductExplorer> = ({ initialProducts }) => {
 
         <section>
           <Catalog products={data.products} isLoading={isFetching} />
-          {/* PAGINAION */}
+          <Pagination
+            changePage={(page) => updateQueryParams('page', page.toString())}
+            currentPage={queryParams.page}
+            numberPages={data.length / +queryParams.perPage}
+          />
         </section>
       </div>
     </>

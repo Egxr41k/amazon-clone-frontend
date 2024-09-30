@@ -12,7 +12,7 @@ export type TypeProductDataFilters = {
   sort?: EnumProductSort | string;
   searchTerm?: string;
   page?: string | number;
-  perPage?: string | number;
+  perPage: string | number;
   raitings?: string;
   minPrice?: string;
   maxPrice?: string;
