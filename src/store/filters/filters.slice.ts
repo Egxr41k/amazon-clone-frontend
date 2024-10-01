@@ -10,7 +10,7 @@ const initialState: IFiltersState = {
     searchTerm: '',
     page: 1,
     perPage: 20,
-    raitings: '',
+    ratings: '',
   },
 };
 

@@ -14,7 +14,7 @@ async function getProduts() {
   const data = await ProductService.getAll({
     page: 1,
     perPage: 4,
-    raitings: '',
+    rating: '',
   });
 
   return data;
