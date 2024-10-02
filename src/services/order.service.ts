@@ -12,7 +12,7 @@ export const OrderService = {
     });
   },
 
-  async getById() {
+  async getByUserId() {
     return instance<IOrder[]>({
       url: `${ORDERS}/by-user`,
       method: 'GET',

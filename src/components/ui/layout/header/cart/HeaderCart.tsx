@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { FC } from 'react';
 import { RiShoppingCartLine } from 'react-icons/ri';
 
@@ -69,9 +70,9 @@ const HeaderCart: FC = () => {
           <div className="text-center">
             {!!items.length && (
               <div className="text-center mt-7 mb-5">
-                <link className="btn btn-white" href="/checkout">
+                <Link className="btn btn-white" href="/checkout">
                   Go to checkout
-                </link>
+                </Link>
               </div>
             )}
           </div>

@@ -10,6 +10,7 @@ import { useActions } from '@/hooks/useActions';
 import { useAuth } from '@/hooks/useAuth';
 
 import { protectedRoutes } from './protected-routes.data';
+import Auth from '@/app/auth/Auth';
 import NotFound from '@/app/not-found';
 import { REFRESH_TOKEN } from '@/constants/token.constants';
 import { getAccessToken } from '@/services/auth/auth.helper';
@@ -47,8 +48,8 @@ const AuthProvider: FC<PropsWithChildren<unknown>> = ({ children }) => {
   if (user?.isAdmin) return <>{children}</>;
   if (user && isProtectedRoute) return <>{children}</>;
   if (user && isAdminRoute) return <NotFound />;
+  if (pathname !== '/auth') return <Auth />;
 
-  pathname !== '/auth' && router.replace('/auth');
   return null;
 };
 

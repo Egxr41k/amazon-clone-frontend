@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import Heading from '@/ui/Heading';
 
 export default function NotFound() {
@@ -7,9 +9,9 @@ export default function NotFound() {
       <p>Could not find requested rsource</p>
       <p>
         View{' '}
-        <link href="/explorer" className="text-primary">
+        <Link href="/explorer" className="text-primary">
           all products
-        </link>
+        </Link>
       </p>
     </>
   );

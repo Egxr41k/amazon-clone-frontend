@@ -7,7 +7,7 @@ export interface IProduct {
   description: string;
   name: string;
   price: number;
-  createAt: Date;
+  createAt: string;
   slug: string;
   category: ICategory;
   reviews: IReview[];

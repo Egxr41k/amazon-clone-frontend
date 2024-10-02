@@ -1,15 +1,12 @@
-import axios from 'axios';
-
 import { instance } from '@/api/api.intercepter';
-import { IReview } from '@/types/review.interface';
 
-const STATISTICS = '/reviews';
+const STATISTICS = '/statistics';
 
 // TODO переделать это плохо!!!!
 // вынести в отдельные интерфейсы
 export type TypeStatisticsResponse = {
-  name: string,
-  value: number
+  name: string;
+  value: number;
 }[];
 
 export const StatisticsService = {
@@ -18,5 +15,5 @@ export const StatisticsService = {
       url: `${STATISTICS}/main`,
       method: 'GET',
     });
-  }
+  },
 };

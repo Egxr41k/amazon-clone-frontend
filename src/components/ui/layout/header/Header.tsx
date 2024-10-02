@@ -43,12 +43,12 @@ const Header: FC = () => {
       <Search />
       <div className="flex items-center justify-end gap-10">
         {user?.isAdmin && !isAdminPanel && (
-          <link
+          <Link
             href="/admin"
             className="hover:text-primary transition-colors duration-200 text-white inline-block text-lg"
           >
             <MdOutlineAdminPanelSettings size={29} />
-          </link>
+          </Link>
         )}
         <Link href="/favorites" className="text-white">
           <AiOutlineHeart size={28} />

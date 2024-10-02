@@ -11,7 +11,7 @@ import { OrderService } from '@/services/order.service';
 export default function MyOrders() {
   const { data: orders } = useQuery(
     ['my orders'],
-    () => OrderService.getAll(),
+    () => OrderService.getByUserId(),
     { select: ({ data }) => data },
   );
 
@@ -35,7 +35,7 @@ export default function MyOrders() {
             </div>
           ))
         ) : (
-          <div>Order not found</div>
+          <div>Orders not found</div>
         )}
       </section>
     </>
