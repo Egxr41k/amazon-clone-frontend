@@ -10,7 +10,7 @@ import { useActions } from '@/hooks/useActions';
 import { useAuth } from '@/hooks/useAuth';
 
 import { protectedRoutes } from './protected-routes.data';
-import Auth from '@/app/auth/Auth';
+import Auth from '@/app/(customer)/auth/Auth';
 import NotFound from '@/app/not-found';
 import { REFRESH_TOKEN } from '@/constants/token.constants';
 import { getAccessToken } from '@/services/auth/auth.helper';
