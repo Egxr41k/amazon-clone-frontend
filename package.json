@@ -26,6 +26,7 @@
     "react-icons": "^4.8.0",
     "react-loader-spinner": "^5.3.4",
     "react-redux": "^8.0.5",
+    "react-scroll": "^1.9.0",
     "react-simple-star-rating": "^5.1.7",
     "react-svg-spinner": "^1.0.4",
     "react-transition-group": "^4.4.5",
@@ -36,6 +37,7 @@
   "devDependencies": {
     "@types/node": "18.16.0",
     "@types/react": "18.0.38",
+    "@types/react-scroll": "^1.8.10",
     "autoprefixer": "^10.4.14",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.1",
