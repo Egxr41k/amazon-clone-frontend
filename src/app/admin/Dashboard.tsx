@@ -2,7 +2,6 @@
 
 import { useQuery } from '@tanstack/react-query';
 import { FC } from 'react';
-import { TailSpin } from 'react-loader-spinner';
 
 import Heading from '@/ui/Heading';
 
@@ -24,16 +23,7 @@ const Dashboard: FC = () => {
     <>
       <Heading className="mb-8">Dashboard</Heading>
       {isFetching ? (
-        <TailSpin
-          height="80"
-          width="80"
-          color="#4fa94d"
-          ariaLabel="tail-spin-loading"
-          radius="1"
-          wrapperStyle={{}}
-          wrapperClass=""
-          visible={true}
-        />
+        <Loader />
       ) : data?.length ? (
         <div className={styles.wrapper}>
           {data.map((item, index) => (

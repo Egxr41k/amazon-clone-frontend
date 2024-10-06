@@ -4,7 +4,6 @@ import cn from 'classNames';
 import Link from 'next/link';
 import { FC } from 'react';
 import { FiLogOut } from 'react-icons/fi';
-import { TailSpin } from 'react-loader-spinner';
 
 import { useCategories } from '@/hooks/queries/useCategory';
 import { useActions } from '@/hooks/useActions';
@@ -32,16 +31,7 @@ const Sidebar: FC = () => {
     >
       <div>
         {isLoading ? (
-          <TailSpin
-            height="80"
-            width="80"
-            color="#4fa94d"
-            ariaLabel="tail-spin-loading"
-            radius="1"
-            wrapperStyle={{}}
-            wrapperClass=""
-            visible={true}
-          />
+          <Loader />
         ) : data ? (
           <>
             <div className="text-xl text-white mt-4 mb-6 ml-6">

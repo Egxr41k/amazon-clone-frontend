@@ -8,7 +8,9 @@ import { IProduct } from '@/types/product.interface';
 
 import { ProductGallery } from './ProductGallery';
 import ProductReviewsCount from './ProductReviewsCount';
+import SimilarProducts from './SimilarProducts';
 import ProductInformation from './product-information/ProductInformation';
+import ProductReviews from './product-reviews/ProductReviews';
 import { ProductService } from '@/services/product/product.service';
 
 interface IProductPage {
@@ -45,6 +47,8 @@ export default function Product({
         </div>
         <ProductInformation product={product} />
       </div>
+      <SimilarProducts similarProducts={similarProducts} />
+      <ProductReviews reviews={product.reviews} productId={product.id} />
     </>
   );
 }

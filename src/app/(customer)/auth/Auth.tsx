@@ -2,9 +2,9 @@
 
 import { FC, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { TailSpin } from 'react-loader-spinner';
 
 import Heading from '@/ui/Heading';
+import Loader from '@/ui/Loader';
 import Button from '@/ui/button/Button';
 import Field from '@/ui/input/Field';
 
@@ -53,16 +53,7 @@ const Auth: FC = () => {
         <Heading className="capitalize text-center mb-4">{type}</Heading>
 
         {isLoading ? (
-          <TailSpin
-            height="80"
-            width="80"
-            color="#4fa94d"
-            ariaLabel="tail-spin-loading"
-            radius="1"
-            wrapperStyle={{}}
-            wrapperClass=""
-            visible={true}
-          />
+          <Loader />
         ) : (
           <>
             <Field

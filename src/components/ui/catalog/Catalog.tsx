@@ -1,11 +1,11 @@
 'use client';
 
 import { FC } from 'react';
-import { TailSpin } from 'react-loader-spinner';
 
 import { IProduct } from '@/types/product.interface';
 
 import Heading from '../Heading';
+import Loader from '../Loader';
 
 import ProductItem from './product-item/ProductItem';
 
@@ -16,19 +16,7 @@ interface ICatalog {
 }
 
 const Catalog: FC<ICatalog> = ({ products, isLoading, title }) => {
-  if (isLoading)
-    return (
-      <TailSpin
-        height="80"
-        width="80"
-        color="#4fa94d"
-        ariaLabel="tail-spin-loading"
-        radius="1"
-        wrapperStyle={{}}
-        wrapperClass=""
-        visible={true}
-      />
-    );
+  if (isLoading) return <Loader />;
 
   return (
     <section>

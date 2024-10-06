@@ -1,7 +1,6 @@
 'use client';
 
 import { FC } from 'react';
-import { TailSpin } from 'react-loader-spinner';
 
 import styles from './AdminList.module.scss';
 import AdminListItem from './AdminListItem';
@@ -22,16 +21,7 @@ const AdminList: FC<IAdminList> = ({
   return (
     <div>
       {isLoading ? (
-        <TailSpin
-          height="80"
-          width="80"
-          color="#4fa94d"
-          ariaLabel="tail-spin-loading"
-          radius="1"
-          wrapperStyle={{}}
-          wrapperClass=""
-          visible={true}
-        />
+        <Loader />
       ) : listItems.length ? (
         listItems.map((listItem) => (
           <AdminListItem

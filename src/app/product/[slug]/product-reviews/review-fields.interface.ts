@@ -1,4 +1,4 @@
 export interface IReviewFields {
-  raiting: number;
+  rating: number;
   text: string;
 }
