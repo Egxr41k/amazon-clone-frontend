@@ -1,11 +1,12 @@
 import { Metadata } from 'next';
 
-import Home from './Home';
+import Checkout from './Checkout';
+import { NO_INDEX_PAGE } from '@/constants/app.constants';
 import { ProductService } from '@/services/product/product.service';
 
-export const metadat: Metadata = {
-  description:
-    'Free shopping on milliond of items. get the best of Shopping and Entertainment with Prime',
+export const metadata: Metadata = {
+  title: 'Checkout',
+  ...NO_INDEX_PAGE,
 };
 
 export const revalidate = 60;
@@ -20,7 +21,7 @@ async function getProduts() {
   return data;
 }
 
-export default async function HomePage() {
+export default async function CheckoutPage() {
   const data = await getProduts();
-  return <Home products={data.products} length={data.length} />;
+  return <Checkout products={data.products} />;
 }

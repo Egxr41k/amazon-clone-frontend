@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import { FC } from 'react';
 
 import Heading from '@/ui/Heading';
+import Loader from '@/ui/Loader';
 
 import { convertPrice } from '@/utils/convertPrice';
 

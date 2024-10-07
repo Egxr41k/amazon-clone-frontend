@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { FC } from 'react';
 import { FiLogOut } from 'react-icons/fi';
 
+import Loader from '@/ui/Loader';
+
 import { useCategories } from '@/hooks/queries/useCategory';
 import { useActions } from '@/hooks/useActions';
 import { useAuth } from '@/hooks/useAuth';

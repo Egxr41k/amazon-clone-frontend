@@ -2,6 +2,8 @@
 
 import { FC } from 'react';
 
+import Loader from '@/ui/Loader';
+
 import styles from './AdminList.module.scss';
 import AdminListItem from './AdminListItem';
 import { IListItem } from './admin-list.interface';
